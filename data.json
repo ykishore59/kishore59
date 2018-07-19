@@ -1,8 +1,8 @@
 {"basics":{
   "image":"is.jpg",
-  "name":"KISHORE",
-  "phoneno":"+90123456789",
-  "email":"kishor@gmail.com",
+  "name":"kishore",
+  "phoneno":"+919010646370",
+  "email":"bhavani.kishore95@gmail.com",
   "address":"SRKR Engineering College,Bhimavaram"
 },
 "Careerobjective":{
@@ -15,17 +15,16 @@
 },
 {
   "degree":"inter",
-  "institute":"BIIT",
+  "institute":"biit",
   "data":["2014-2017","83.41%"]
 },
 {
   "degree":"SSC",
-  "institute":"Sundeep High School",
+  "institute":"sundeep High School",
   "data":["2014","7.7"]
 }
 ],
-"skills":[
-  {
+"skills":[{
   "title":"Languages",
   "data":["C","C++","JAVA","Python","Data Structures"]
   },
@@ -36,5 +35,14 @@
 {
   "title":"Operating Systems",
   "data":["Linux","Windows","MAC","ubuntu"]
-  }]
+  }],
+  "achievements":[{
+    "data":"Received 9 certification in programming."
+    },
+  {
+    "data":"Met deadlines consistently."
+    },
+  {
+    "data":"Gaining qualifications other than my education."
+    }]
 }
