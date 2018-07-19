@@ -1,23 +1,83 @@
-function getfile(file,callback) {
-	var xhr =new XMLHttpRequest(" application/json")
-	xhr.overrideMimeType("application/json");
-	xhr.open("GET",file,true);
-	xhr.onreadysatechange = function(){
-		if(xhr.readystate ===4 && xhr.status == "200"){
-		callback(xhr.responsetext);
-
-	}
-};
-xhr.send(null);
+function getfile(file,callback){
+  var xhr = new XMLHttpRequest();
+  xhr.overrideMimeType("application/json");
+  xhr.open("GET",file,true);
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState === 4 && xhr.status == "200"){
+      callback(xhr.responseText);
+    }
+  };
+xhr.send();
 }
-getfile("data.json",function(text){
-	var data =JSON.prase(text);
-	console.log(data);
+getfile("data.json",function(text) {
+  var data = JSON.parse(text);
+  console.log(data);
+  details(data.basics);
+  career(data.Careerobjective);
+  education(data.education);
+  skills(data.skills);
 })
-var child=document.queryselection("childone")
-
+var child = document.querySelector(".childone");
 function details(det){
-	var img=document.createelement("ïmg");
-	img.src=det.image;
-	child.appendchild("img");
+  var img = document.createElement("img");
+  img.src = det.image;
+  child.appendChild(img);
+  var name = document.createElement("h3");
+  name.textContent = det.name;
+  child.appendChild(name);
+  var phoneno = document.createElement("h3");
+  phoneno.textContent = det.phoneno;
+  child.appendChild(phoneno);
+  var mail = document.createElement("a");
+  mail.href = "mailto:bhavani.kishore@gmail.com"
+  mail.textContent = det.email;
+  child.appendChild(mail);
+  var address = document.createElement("h3");
+  address.textContent = "Address";
+  child.appendChild(address);
+  var address = document.createElement("hr");
+  child.appendChild(address);
+  var address = document.createElement("h2");
+  address.textContent = det.address;
+  child.appendChild(address);
+}
+var child2 = document.querySelector(".childtwo");
+function career(careerinfo){
+  var address = document.createElement("h3");
+  address.textContent = "Career Objective";
+  child2.appendChild(address);
+  var address = document.createElement("hr");
+  child2.appendChild(address);
+  var add = document.createElement("p");
+  add.textContent = careerinfo.info;
+  child2.appendChild(add);
+}
+function education(edu){
+  var ed = document.createElement("h2");
+  ed.textContent = "Education Qualifications";
+  child2.appendChild(ed);
+  var hr = document.createElement("hr");
+  child2.appendChild(hr);
+  for(i=0;i<edu.length;i++){
+    var deg = document.createElement("h3");
+    deg.textContent = edu[i].degree;
+    child2.appendChild(deg);
+    var eduul = document.createElement("ul");
+    var eduli = document.createElement("li");
+    eduli.textContent = edu[i].institute;
+    eduul.appendChild(eduli);
+    child2.appendChild(eduul);
+    var eduul = document.createElement("ul");
+    var eduli2 = document.createElement("li");
+    eduli2.textContent = edu[i].data;
+    eduul.appendChild(eduli2);
+    child2.appendChild(eduul);
+  }
+}
+function skills(tech){
+  var tec = document.createElement("h2");
+  tec.textContent = "Technical Skills";
+  child2.appendChild(tec);
+  var hr = document.createElement("hr");
+  child2.appendChild(hr);
 }
